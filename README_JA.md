@@ -57,7 +57,7 @@ Assetsフォルダ以下に`.ts`ファイルを追加することで、TypeScrip
 
 これは元のTypeScriptのソースコードとトランスパイル後のJavaScriptのソースコードの両方を保持するScriptableObjectです。
 
-![img](./docs/images/img-typescript-asset.png)
+<img src="https://github.com/AnnulusGames/TypeScriptImporter/blob/main/docs/images/img-typescript-asset.png" width="500">
 
 作成された`TypeScriptAsset`は任意のJavaScriptの実行環境に渡すことができます。以下は[Jint](https://github.com/sebastienros/jint)を用いたサンプルです。
 
@@ -143,8 +143,7 @@ https://github.com/AnnulusGames/TypeScriptImporter.git?path=src/TypeScriptImport
 
 `.ts`ファイルをLuaとしてトランスパイルするには、有効なImporterを切り替える必要があります。Importerのドロップダウンから`TypeScriptImporter.Editor.TS2LuaImporter`を選択します。
 
-![img](./docs/images/img-select-importer.png)
-
+<img src="https://github.com/AnnulusGames/TypeScriptImporter/blob/main/docs/images/img-select-importer.png" width="500">
 
 作成された`TypeScriptToLuaAsset`は任意のLuaの実行環境に渡すことができます。以下は[Lua-CSharp](https://github.com/AnnulusGames/Lua-CSharp)を用いたサンプルです。
 

@@ -57,7 +57,7 @@ Adding a `.ts` file to the `Assets` folder will trigger automatic compilation by
 
 This asset retains both the original TypeScript source code and the transpiled JavaScript source code as a `ScriptableObject`.  
 
-![img](./docs/images/img-typescript-asset.png)  
+<img src="https://github.com/AnnulusGames/TypeScriptImporter/blob/main/docs/images/img-typescript-asset.png" width="500">
 
 The generated `TypeScriptAsset` can be passed to any JavaScript execution environment. Below is an example using [Jint](https://github.com/sebastienros/jint):  
 
@@ -143,7 +143,7 @@ Alternatively, open `Packages/manifest.json` and add the following entry to the 
 
 To transpile `.ts` files into Lua, switch the active Importer. From the Importer dropdown, select `TypeScriptImporter.Editor.TS2LuaImporter`.  
 
-![img](./docs/images/img-select-importer.png)  
+<img src="https://github.com/AnnulusGames/TypeScriptImporter/blob/main/docs/images/img-select-importer.png" width="500">
 
 The generated `TypeScriptToLuaAsset` can be passed to any Lua execution environment. Below is an example using [Lua-CSharp](https://github.com/AnnulusGames/Lua-CSharp):  
 
