@@ -38,7 +38,7 @@ namespace TypeScriptImporter.Editor
             {
                 ProcessHelper.StartCompileProcess(
 #if UNITY_EDITOR_WIN
-                    $"npx {commandName}", args.ToString()
+                    "npx", $"{commandName} {args}" 
 #else
                     "/bin/bash", $"-cl 'npx {commandName} {args}'"
 #endif
