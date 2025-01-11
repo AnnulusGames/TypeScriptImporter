@@ -1,0 +1,12 @@
+{
+    "name": "com.annulusgames.typescript-importer.lua",
+    "version": "1.0.0",
+    "displayName": "TypeScript Importer for Lua",
+    "description": "TypeScript Importer TypeScriptToLua extension",
+    "dependencies": {
+        "com.annulusgames.typescript-importer": "1.0.0"
+    },
+    "author": {
+        "name": "Annulus Games"
+    }
+}

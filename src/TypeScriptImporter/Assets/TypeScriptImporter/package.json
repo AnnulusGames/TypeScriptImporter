@@ -1,0 +1,12 @@
+{
+    "name": "com.annulusgames.typescript-importer",
+    "version": "1.0.0",
+    "displayName": "TypeScript Importer",
+    "description": "TypeScript Importer for Unity",
+    "dependencies": {
+        
+    },
+    "author": {
+        "name": "Annulus Games"
+    }
+}

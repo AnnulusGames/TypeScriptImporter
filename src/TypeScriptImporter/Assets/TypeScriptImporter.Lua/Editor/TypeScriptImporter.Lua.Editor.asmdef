@@ -1,0 +1,19 @@
+{
+    "name": "TypeScriptImporter.Lua.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e6585e3010e3546bd944167675ee1841",
+        "GUID:8452dd42aeb0b4dc6a4d7c803ae1bbe4"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

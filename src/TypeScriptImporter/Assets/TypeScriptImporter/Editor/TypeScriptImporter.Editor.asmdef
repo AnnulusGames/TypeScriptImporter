@@ -1,0 +1,18 @@
+{
+    "name": "TypeScriptImporter.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c7430d7c331b24775807565133e451ac"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

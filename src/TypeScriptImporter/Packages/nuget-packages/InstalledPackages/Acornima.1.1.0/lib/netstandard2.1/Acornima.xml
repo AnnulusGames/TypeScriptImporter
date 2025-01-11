@@ -1,0 +1,1623 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Acornima</name>
+    </assembly>
+    <members>
+        <member name="P:Acornima.Ast.ArrayExpression.Elements">
+            <summary>
+            { <see cref="T:Acornima.Ast.Expression"/> (incl. <see cref="T:Acornima.Ast.SpreadElement"/>) | <see langword="null"/> (omitted element) }
+            </summary>
+        </member>
+        <member name="P:Acornima.Ast.ArrayPattern.Elements">
+            <remarks>
+            { <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.MemberExpression"/> (in assignment contexts only) | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/> | <see cref="T:Acornima.Ast.AssignmentPattern"/> | <see cref="T:Acornima.Ast.RestElement"/> | <see langword="null"/> (omitted element) }
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ArrowFunctionExpression.Params">
+            <remarks>
+            { <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/> | <see cref="T:Acornima.Ast.AssignmentPattern"/> | <see cref="T:Acornima.Ast.RestElement"/> }
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ArrowFunctionExpression.Body">
+            <remarks>
+            <see cref="T:Acornima.Ast.FunctionBody"/> | <see cref="T:Acornima.Ast.Expression"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.AssignmentExpression.Left">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.MemberExpression"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/> | <see cref="T:Acornima.Ast.ParenthesizedExpression"/> (only if <see cref="P:Acornima.ParserOptions.PreserveParens"/> is enabled)
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.AssignmentPattern.Left">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.MemberExpression"/> (in assignment contexts only) | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.CatchClause.Param">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/> | <see langword="null"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ChainExpression.Expression">
+            <remarks>
+            <see cref="T:Acornima.Ast.CallExpression"/> | <see cref="T:Acornima.Ast.MemberExpression"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ClassBody.Body">
+            <remarks>
+            { <see cref="T:Acornima.Ast.PropertyDefinition"/> | <see cref="T:Acornima.Ast.AccessorProperty"/> | <see cref="T:Acornima.Ast.MethodDefinition"/> |  <see cref="T:Acornima.Ast.StaticBlock"/> }
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ClassDeclaration.Id">
+            <remarks>
+            Diverging from the ESTree specification, <see langword="null"/> is used to indicate an anonymous default exported class (instead of introducing <see langword="AnonymousDefaultExportedClassDeclaration"/>).
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ClassProperty.Key">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.StringLiteral"/> | <see cref="T:Acornima.Ast.NumericLiteral"/> | <see cref="T:Acornima.Ast.BigIntLiteral"/> | '[' <see cref="T:Acornima.Ast.Expression"/> ']' | <see cref="T:Acornima.Ast.PrivateIdentifier"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ExportAllDeclaration.Exported">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.StringLiteral"/> | <see langword="null"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ExportDefaultDeclaration.Declaration">
+            <remarks>
+            <see cref="T:Acornima.Ast.Expression"/> | <see cref="T:Acornima.Ast.ClassDeclaration"/> | <see cref="T:Acornima.Ast.FunctionDeclaration"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ExportNamedDeclaration.Declaration">
+            <remarks>
+            <see cref="T:Acornima.Ast.VariableDeclaration"/> | <see cref="T:Acornima.Ast.ClassDeclaration"/> | <see cref="T:Acornima.Ast.FunctionDeclaration"/> | <see langword="null"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ExportSpecifier.Local">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.StringLiteral"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ExportSpecifier.Exported">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.StringLiteral"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ForInStatement.Left">
+            <remarks>
+            <see cref="T:Acornima.Ast.VariableDeclaration"/> (may have an initializer in non-strict mode) | <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.MemberExpression"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ForOfStatement.Left">
+            <remarks>
+            <see cref="T:Acornima.Ast.VariableDeclaration"/> (cannot have an initializer) | <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.MemberExpression"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ForStatement.Init">
+            <remarks>
+            <see cref="T:Acornima.Ast.VariableDeclaration"/> (var i) | <see cref="T:Acornima.Ast.Expression"/> (i=0)
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.FunctionDeclaration.Id">
+            <remarks>
+            Diverging from the ESTree specification, <see langword="null"/> is used to indicate an anonymous default exported function (instead of introducing <see langword="AnonymousDefaultExportedFunctionDeclaration"/>).
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.FunctionDeclaration.Params">
+            <remarks>
+            { <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/> | <see cref="T:Acornima.Ast.AssignmentPattern"/> | <see cref="T:Acornima.Ast.RestElement"/> }
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.FunctionExpression.Params">
+            <remarks>
+            { <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/> | <see cref="T:Acornima.Ast.AssignmentPattern"/> | <see cref="T:Acornima.Ast.RestElement"/> }
+            </remarks>
+        </member>
+        <member name="T:Acornima.Ast.IChainElement">
+            <summary>
+            Represents a possible element of an optional chaining expression (<see cref="T:Acornima.Ast.ChainExpression"/>),
+            i.e. a <see cref="T:Acornima.Ast.MemberExpression"/> or a <see cref="T:Acornima.Ast.CallExpression"/>.
+            </summary>
+        </member>
+        <member name="T:Acornima.Ast.IClass">
+            <summary>
+            Represents either a <see cref="T:Acornima.Ast.ClassDeclaration"/> or a <see cref="T:Acornima.Ast.ClassExpression"/>.
+            </summary>
+        </member>
+        <member name="T:Acornima.Ast.IClassElement">
+            <summary>
+            Represents a possible element of a class,
+            i.e. a <see cref="T:Acornima.Ast.PropertyDefinition"/>, an <see cref="T:Acornima.Ast.AccessorProperty"/>, a <see cref="T:Acornima.Ast.MethodDefinition"/> or a <see cref="T:Acornima.Ast.StaticBlock"/>.
+            </summary>
+        </member>
+        <member name="T:Acornima.Ast.IDestructuringPatternElement">
+            <summary>
+            Represents a possible element of a destructuring pattern, i.e. an <see cref="T:Acornima.Ast.Identifier"/>, a <see cref="T:Acornima.Ast.MemberExpression"/>,
+            an <see cref="T:Acornima.Ast.ArrayPattern"/>, an <see cref="T:Acornima.Ast.ObjectPattern"/>, an <see cref="T:Acornima.Ast.AssignmentPattern"/> or a <see cref="T:Acornima.Ast.RestElement"/>.
+            </summary>
+        </member>
+        <member name="T:Acornima.Ast.IFunction">
+            <summary>
+            Represents either a <see cref="T:Acornima.Ast.FunctionDeclaration"/>, a <see cref="T:Acornima.Ast.FunctionExpression"/> or an <see cref="T:Acornima.Ast.ArrowFunctionExpression"/>.
+            </summary>
+        </member>
+        <member name="T:Acornima.Ast.IHoistingScope">
+            <summary>
+            Represents a statement block to the top of which <c>var</c> variables are hoisted,
+            i.e. a <see cref="T:Acornima.Ast.Script"/>, a <see cref="T:Acornima.Ast.Module"/>, a <see cref="T:Acornima.Ast.FunctionBody"/> or a <see cref="T:Acornima.Ast.StaticBlock"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.Ast.ImportAttribute.Key">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.StringLiteral"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ImportDeclaration.Specifiers">
+            <remarks>
+            <see cref="T:Acornima.Ast.ImportSpecifier"/> | <see cref="T:Acornima.Ast.ImportDefaultSpecifier"/> | <see cref="T:Acornima.Ast.ImportNamespaceSpecifier"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ImportSpecifier.Imported">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.StringLiteral"/>
+            </remarks>
+        </member>
+        <member name="T:Acornima.Ast.INode">
+            <summary>
+            Defines the base interface of AST nodes.
+            </summary>
+        </member>
+        <member name="P:Acornima.Ast.INode.UserData">
+            <remarks>
+            The operation is not guaranteed to be thread-safe. In case concurrent access or update is possible, the necessary synchronization is caller's responsibility.
+            </remarks>
+        </member>
+        <member name="T:Acornima.Ast.IProperty">
+            <summary>
+            Represents an object property, a property of an object destructuring pattern or a class property,
+            i.e. a <see cref="T:Acornima.Ast.ObjectProperty"/>, an <see cref="T:Acornima.Ast.AssignmentProperty"/>, a <see cref="T:Acornima.Ast.PropertyDefinition"/>, an <see cref="T:Acornima.Ast.AccessorProperty"/> or a <see cref="T:Acornima.Ast.MethodDefinition"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.Ast.Literal.Value">
+            <remarks>
+            <see langword="null"/> | <see cref="T:System.String"/> | <see cref="T:System.Boolean"/> | <see cref="T:System.Double"/> | <see cref="T:System.Numerics.BigInteger"/> | <see cref="T:System.Text.RegularExpressions.Regex"/>
+            </remarks>
+        </member>
+        <member name="M:Acornima.Ast.Node.GetChildNodes">
+            <remarks>
+            Inheritors who extend the AST with custom node types should override this method and provide an actual implementation.
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.Node.UserData">
+            <summary>
+            Gets or sets the arbitrary, user-defined data object associated with the current <see cref="T:Acornima.Ast.Node"/>.
+            </summary>
+            <remarks>
+            The operation is not guaranteed to be thread-safe. In case concurrent access or update is possible, the necessary synchronization is caller's responsibility.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Ast.Node.AcceptAsExtension(Acornima.AstVisitor)">
+            <summary>
+            Dispatches the visitation of the current node to <see cref="M:Acornima.AstVisitor.VisitExtension(Acornima.Ast.Node)"/>.
+            </summary>
+            <remarks>
+            When defining custom node types, inheritors can use this method to implement the abstract <see cref="M:Acornima.Ast.Node.Accept(Acornima.AstVisitor)"/> method.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Ast.NodeList`1.#ctor(`0[],System.Int32)">
+            <remarks>
+            WARNING: Expects ownership of the array.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Ast.NodeList`1.#ctor(`0[])">
+            <remarks>
+            WARNING: Expects ownership of the array.
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.NodeList`1.Enumerator.Current">
+            <remarks>
+            According to the <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerator-1.current#remarks">specification</see>,
+            accessing <see cref="P:Acornima.Ast.NodeList`1.Enumerator.Current"/> before calling <see cref="M:Acornima.Ast.NodeList`1.Enumerator.MoveNext"/> or after <see cref="M:Acornima.Ast.NodeList`1.Enumerator.MoveNext"/> returning <see langword="false"/> is undefined behavior.
+            Thus, to maximize performance, this implementation doesn't do any null or range checks, just let the default exceptions occur on invalid access.
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ObjectExpression.Properties">
+            <remarks>
+            { <see cref="T:Acornima.Ast.Property"/> | <see cref="T:Acornima.Ast.SpreadElement"/> }
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.ObjectPattern.Properties">
+            <remarks>
+            { <see cref="T:Acornima.Ast.AssignmentProperty"/> | <see cref="T:Acornima.Ast.RestElement"/> }
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.Property.Key">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.StringLiteral"/> | <see cref="T:Acornima.Ast.NumericLiteral"/> | <see cref="T:Acornima.Ast.BigIntLiteral"/> | '[' <see cref="T:Acornima.Ast.Expression"/> ']'
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.Property.Value">
+            <remarks>
+            When property of an object literal: <see cref="T:Acornima.Ast.Expression"/> (incl. <see cref="T:Acornima.Ast.SpreadElement"/> and <see cref="T:Acornima.Ast.FunctionExpression"/> for getters/setters/methods) <br />
+            When property of an object pattern: <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.MemberExpression"/> (in assignment contexts only) | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/> | <see cref="T:Acornima.Ast.AssignmentPattern"/> | <see cref="T:Acornima.Ast.RestElement"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.RegExpLiteral.Value">
+            <remarks>
+            Can be <see langword="null"/> when the parser was not configured to convert regular expressions to <see cref="T:System.Text.RegularExpressions.Regex"/> objects
+            (see also <see cref="P:Acornima.ParserOptions.RegExpParseMode"/>) or tolerant parsing was enabled and it was not possible to construct an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/> object.
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.RestElement.Argument">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.MemberExpression"/> (in assignment contexts only) | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Ast.VariableDeclarator.Id">
+            <remarks>
+            <see cref="T:Acornima.Ast.Identifier"/> | <see cref="T:Acornima.Ast.ArrayPattern"/> | <see cref="T:Acornima.Ast.ObjectPattern"/>
+            </remarks>
+        </member>
+        <member name="F:Acornima.EcmaVersion.Latest">
+            <summary>
+            The latest version which is fully supported (<see cref="F:Acornima.EcmaVersion.ES2023"/>).
+            </summary>
+        </member>
+        <member name="F:Acornima.ExperimentalESFeatures.Decorators">
+            <summary>
+            Decorators feature as specified by this <seealso href="https://github.com/tc39/proposal-decorators">proposal</seealso>. Available only when <see cref="P:Acornima.ParserOptions.EcmaVersion"/> >= ES2022.
+            </summary>
+        </member>
+        <member name="F:Acornima.ExperimentalESFeatures.ImportAttributes">
+            <summary>
+            Import Attributes feature as specified by this <seealso href="https://github.com/tc39/proposal-import-attributes">proposal</seealso>. Available only when <see cref="P:Acornima.ParserOptions.EcmaVersion"/> >= ES2020.
+            </summary>
+        </member>
+        <member name="F:Acornima.ExperimentalESFeatures.RegExpDuplicateNamedCapturingGroups">
+            <summary>
+            Duplicate named capturing groups feature as specified by this <seealso href="https://github.com/tc39/proposal-duplicate-named-capturing-groups">proposal</seealso>.
+            </summary>
+        </member>
+        <member name="T:Acornima.Helpers.ArrayList`1">
+             <summary>
+             This structure is like <see cref="T:System.Collections.Generic.List`1"/> from the BCL except the only allocation
+             required on the heap is the backing array storage for the elements.
+             An empty list, however causes no heap allocation; that is, the array is
+             allocated on first addition.
+             </summary>
+             <remarks>
+             WARNING: Having a struct intended for modification can introduce some very
+             subtle and ugly bugs if not used carefully. For example, two copies
+             of the struct start with the same base array and modifying either
+             list may also modify the other. Consider the following:
+            
+             <code>
+             var a = new ArrayList&lt;int&gt;();
+             a.Add(1);
+             a.Add(2);
+             a.Add(3);
+             var b = a;
+             b.Add(4);
+             b.RemoveAt(0);
+             </code>
+            
+             Both `a` and `b` will see the same changes. However, they'll appear
+             to change independently if the example is changed as follows:
+            
+             <code>
+             var a = new ArrayList&lt;int&gt;();
+             a.Add(1);
+             a.Add(2);
+             a.Add(3);
+             var b = a;
+             b.Add(4);
+             b.Add(5);        // &lt;-- only new change
+             b.RemoveAt(0);
+             </code>
+            
+             When 5 is added to `b`, `b` re-allocates its array to make space
+             and consequently further changes are only visible in `b`. To help
+             avoid these subtle bugs, the debug version of this implementation
+             tracks changes. It maintains a local and a boxed version number.
+             The boxed version gets shared by all copies of the struct. If a
+             modification is made via any copy then the boxed version number is
+             updated. Any subsequent use (even if for reading only) of other
+             copies check that their local version numbers haven't diverged from
+             the shared one. In effect, if a copy is made and modified then the
+             original will throw if ever used. For the example above, this
+             means while it's safe to continue to use copy `b` after
+             modification, `a` will become useless:
+            
+             <code>
+             var a = new ArrayList&lt;int&gt;();
+             a.Add(1);
+             a.Add(2);
+             a.Add(3);
+             var b = a;
+             b.Add(4);
+             b.Add(5);
+             b.RemoveAt(0);
+             Console.WriteLine(b.Count); // safe to continue to use
+             Console.WriteLine(a.Count); // will throw
+             </code>
+             </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.#ctor(`0[])">
+            <remarks>
+            WARNING: Expects ownership of the array.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.GetItemRef(System.Int32)">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Helpers.ArrayList`1"/> while the returned reference is in use.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.LastItemRef">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Helpers.ArrayList`1"/> while the returned reference is in use.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.PushRef">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Helpers.ArrayList`1"/> while the returned reference is in use.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.PeekRef">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Helpers.ArrayList`1"/> while the returned reference is in use.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.PopRef">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Helpers.ArrayList`1"/> while the returned reference is in use.<br/>
+            Also note that this operation doesn't actually remove the item from the underlying data structure, so objects referenced by
+            the item will not be eligible for garbage collection.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.AsSpan">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Helpers.ArrayList`1"/> while the returned <see cref="T:System.Span`1"/> is in use.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Helpers.ArrayList`1.AsReadOnlySpan">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Helpers.ArrayList`1"/> while the returned <see cref="T:System.ReadOnlySpan`1"/> is in use.
+            </remarks>
+        </member>
+        <member name="T:Acornima.Helpers.ArrayList`1.Enumerator">
+            <remarks>
+            This implementation does not detect changes to the list during iteration
+            and therefore the behaviour is undefined under those conditions.
+            </remarks>
+        </member>
+        <member name="P:Acornima.Helpers.ArrayList`1.Enumerator.Current">
+            <remarks>
+            According to the <see href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerator-1.current#remarks">specification</see>,
+            accessing <see cref="P:Acornima.Helpers.ArrayList`1.Enumerator.Current"/> before calling <see cref="M:Acornima.Helpers.ArrayList`1.Enumerator.MoveNext"/> or after <see cref="M:Acornima.Helpers.ArrayList`1.Enumerator.MoveNext"/> returning <see langword="false"/> is undefined behavior.
+            Thus, to maximize performance, this implementation doesn't do any null or range checks, just let the default exceptions occur on invalid access.
+            </remarks>
+        </member>
+        <member name="T:Acornima.Helpers.ExceptionHelper">
+            <remarks>
+            JIT cannot inline methods that have <see langword="throw"/> in them. These helper methods allow us to work around this.
+            </remarks>
+        </member>
+        <member name="T:Acornima.Helpers.ReadOnlyRef`1">
+            <summary>
+            A struct that can store a read-only managed reference.
+            </summary>
+        </member>
+        <member name="T:Acornima.Helpers.StringPool">
+            <summary>
+            A heavily slimmed down version of <see cref="T:System.Collections.Generic.HashSet`1"/> which can be used to reduce memory allocations when dissecting a string.
+            </summary>
+        </member>
+        <member name="M:Acornima.Helpers.StringPool.Initialize(System.Int32)">
+            <summary>
+            Initializes buckets and slots arrays. Uses suggested capacity by finding next prime
+            greater than or equal to capacity.
+            </summary>
+        </member>
+        <member name="M:Acornima.Helpers.StringPool.GetBucketRef(System.Int32)">
+            <summary>Gets a reference to the specified hashcode's bucket, containing an index into <see cref="F:Acornima.Helpers.StringPool._entries"/>.</summary>
+        </member>
+        <member name="M:Acornima.Helpers.StringPool.GetOrCreate(System.ReadOnlySpan{System.Char})">
+            <summary>Adds the specified string to the <see cref="T:Acornima.Helpers.StringPool"/> object if it's not already contained.</summary>
+            <param name="value">The string to add.</param>
+            <returns>The stored string instance.</returns>
+        </member>
+        <member name="F:Acornima.Helpers.StringPool.Entry.Next">
+            <summary>
+            0-based index of next entry in chain: -1 means end of chain
+            also encodes whether this entry _itself_ is part of the free list by changing sign and subtracting 3,
+            so -2 means end of free list, -3 means index 0 but on free list, -4 means index 1 but on free list, etc.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParseError.Index">
+            <summary>
+            Zero-based index within the parsed code string. (Can be negative if location information is available.)
+            </summary>
+        </member>
+        <member name="P:Acornima.ParseError.LineNumber">
+            <summary>
+            One-based line number. (Can be zero if location information is not available.)
+            </summary>
+        </member>
+        <member name="P:Acornima.ParseError.Column">
+            <summary>
+            Zero-based column index.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParseErrorException.LineNumber">
+            <summary>
+            One-based line number. (Can be zero if location information is not available.)
+            </summary>
+        </member>
+        <member name="P:Acornima.ParseErrorException.Column">
+            <summary>
+            Zero-based column index.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.EcmaVersion">
+            <summary>
+            Gets or sets the ECMAScript version to parse.
+            Must be either ES3, ES5, ES6 (or ES2015), ES7 (ES2016), ES8 (ES2017), ES9 (ES2018), ES10
+            (ES2019), ES11 (ES2020), ES12 (ES2021), ES13 (ES2022), ES14 (ES2023), or Latest
+            (the latest version the library supports). Defaults to <see cref="F:Acornima.EcmaVersion.Latest"/>.
+            </summary>
+            <remarks>
+            This influences support for strict mode, the set of reserved words, and support
+            for new syntax features.
+            </remarks>
+        </member>
+        <member name="P:Acornima.ParserOptions.ExperimentalESFeatures">
+            <summary>
+            Gets or sets which experimental ECMAScript language features to enable.
+            Defaults to <see cref="F:Acornima.ExperimentalESFeatures.None"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.AllowReserved">
+            <summary>
+            Gets or sets whether to enforce reserved words. Defaults to <see cref="F:Acornima.AllowReservedOption.Default"/>,
+            in which case reserved words are only enforced if <see cref="P:Acornima.ParserOptions.EcmaVersion"/> >= ES5.
+            </summary>
+            <remarks>
+            Set <see cref="P:Acornima.ParserOptions.AllowReserved"/> to <see cref="F:Acornima.AllowReservedOption.Yes"/> or <see cref="F:Acornima.AllowReservedOption.No"/>
+            to explicitly enable or disable this behavior. When this option has the value <see cref="F:Acornima.AllowReservedOption.Never"/>,
+            reserved words and keywords can not even be used as property names.
+            </remarks>
+        </member>
+        <member name="P:Acornima.ParserOptions.AllowReturnOutsideFunction">
+            <summary>
+            Gets or sets whether to allow return statements at the top level.
+            Defaults to <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.AllowImportExportEverywhere">
+            <summary>
+            Gets or sets whether to allow import/export statements at locations other than the top level.
+            Defaults to <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.AllowAwaitOutsideFunction">
+            <summary>
+            Gets or sets whether to allow await identifiers in the top-level scope.
+            Defaults to <see langword="false"/>.
+            </summary>
+            <remarks>
+            They will not be allowed in non-async functions even when enabling this option.
+            </remarks>
+        </member>
+        <member name="P:Acornima.ParserOptions.AllowNewTargetOutsideFunction">
+            <summary>
+            Gets or sets whether to allow new.target meta-properties in the top-level scope.
+            Defaults to <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.AllowSuperOutsideMethod">
+            <summary>
+            Gets or sets whether to allow super identifiers to appear outside methods.
+            Defaults to <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.AllowHashBang">
+            <summary>
+            Gets or sets whether to allow hashbang directive at the beginning of file and treat it as a line comment.
+            Defaults to <see langword="null"/>, in which case hashbang comment is allowed if <see cref="P:Acornima.ParserOptions.EcmaVersion"/> >= ES2023.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.CheckPrivateFields">
+            <summary>
+            Gets or sets whether to verify that private properties are only used in places where they are valid and have been declared.
+            Defaults to <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.PreserveParens">
+            <summary>
+            Gets or sets whether to represent parenthesized expressions by (non-standard) <see cref="T:Acornima.Ast.ParenthesizedExpression"/> nodes in the AST.
+            Defaults to <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.RegExpParseMode">
+            <summary>
+            Gets or sets how regular expressions should be parsed. Defaults to <see cref="F:Acornima.RegExpParseMode.Validate"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.RegexTimeout">
+            <summary>
+            Gets or sets the default timeout for created <see cref="T:System.Text.RegularExpressions.Regex"/> instances. Defaults to 5 seconds.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.Tolerant">
+            <summary>
+            Gets or sets whether to ignore minor errors that do not affect the semantics of the parsed program.
+            Defaults to <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.ErrorHandler">
+            <summary>
+            Gets or sets the <see cref="T:Acornima.ParseErrorHandler"/> to use. Defaults to <see cref="F:Acornima.ParseErrorHandler.Default"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.ParserOptions.OnToken">
+            <summary>
+            Gets or sets an optional callback function which will be called whenever a token is read.
+            </summary>
+            <remarks>
+            It will be passed the parameters of the token as a <see cref="T:Acornima.Token"/> object,
+            in the same format as returned by <see cref="M:Acornima.Tokenizer.GetToken(Acornima.TokenizerContext@)"/>.
+            </remarks>
+        </member>
+        <member name="P:Acornima.ParserOptions.OnComment">
+            <summary>
+            Gets or sets an optional callback function which will be called whenever a comment is skipped.
+            </summary>
+            <remarks>
+            It will be passed the parameters of the comment as a <see cref="T:Acornima.Comment"/> object.
+            </remarks>
+        </member>
+        <member name="P:Acornima.ParserOptions.OnInsertedSemicolon">
+            <summary>
+            Gets or sets an optional callback function which will be called when a semicolon is automatically inserted.
+            </summary>
+            <remarks>
+            It will be passed the position of the inserted semicolon as an offset and the location as a <see cref="T:Acornima.Position"/> object.
+            </remarks>
+        </member>
+        <member name="P:Acornima.ParserOptions.OnTrailingComma">
+            <summary>
+            Gets or sets an optional callback function which will be called when a trailing comma is encountered.
+            </summary>
+            <remarks>
+            It will be passed the position of the trailing comma as an offset and the location as a <see cref="T:Acornima.Position"/> object.
+            </remarks>
+        </member>
+        <member name="P:Acornima.ParserOptions.OnNode">
+            <summary>
+            Gets or sets an optional callback which will be called whenever an AST node is parsed.
+            </summary>
+            <remarks>
+            This callback allows you to make changes to the nodes created by the parser.
+            E.g. you can use it to store a reference to the parent node for later use:
+            <code>
+            OnNode = (node, _) =>
+            {
+                foreach (var child in node.ChildNodes)
+                {
+                    child.UserData = node;
+                }
+            };
+            </code>
+            Please note that the callback is also executed on nodes which are reinterpreted
+            later during parsing, that is, on nodes which won't become a part of the final AST.
+            </remarks>
+        </member>
+        <member name="F:Acornima.Position.Line">
+            <summary>
+            Line number (one-based).
+            </summary>
+            <remarks>
+            A position where <see cref="F:Acornima.Position.Line"/> and <see cref="F:Acornima.Position.Column"/> are zero is an allowed value
+            (since it's the <see langword="default"/> value of the struct) but considered an invalid position.
+            </remarks>
+        </member>
+        <member name="F:Acornima.Position.Column">
+            <summary>
+            Column number (zero-based).
+            </summary>
+        </member>
+        <member name="T:Acornima.ExceptionMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.ConcurrentUpdatePerformed">
+            <summary>
+              Looks up a localized string similar to A concurrent update was performed on this object and corrupted its state..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.InvalidEcmaVersionForModule">
+            <summary>
+              Looks up a localized string similar to To parse input as module code, you need to configure the parser to use ECMAScript version {0} or newer..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.InvalidEcmaVersionForStrictMode">
+            <summary>
+              Looks up a localized string similar to To parse input in strict mode, you need to configure the parser to use ECMAScript version {0} or newer..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.InvalidFormat">
+            <summary>
+              Looks up a localized string similar to Input string was not in a correct format..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.MustRewriteToSameNodeNonNullable">
+            <summary>
+              Looks up a localized string similar to Rewriting a node of type {0} must return a non-null value of the same type. Alternatively, override the visitor method and change it not to visit children of this type..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.MustRewriteToSameNodeNullable">
+            <summary>
+              Looks up a localized string similar to Rewriting a node of type {0} must return null or a non-null value of the same type. Alternatively, override the visitor method and change it not to visit children of this type..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.OverrideGetChildNodes">
+            <summary>
+              Looks up a localized string similar to User-defined node types should override the {0} method and provide an actual implementation..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.UnsupportedEcmaVersion">
+            <summary>
+              Looks up a localized string similar to ECMAScript version {0} is not supported..
+            </summary>
+        </member>
+        <member name="P:Acornima.ExceptionMessages.UnsupportedNodeTypeVisited">
+            <summary>
+              Looks up a localized string similar to The visitor does not support nodes of type {0}. You can override {1} to handle this case..
+            </summary>
+        </member>
+        <member name="T:Acornima.RegExpConversionErrorMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegexCreationFailed">
+            <summary>
+              Looks up a localized string similar to Failed to create {0} from the adapted pattern ({1}) and options ({2}).
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegExpConversionFailed">
+            <summary>
+              Looks up a localized string similar to Cannot convert regular expression to an equivalent {0}: /{1}/{2}: {3}.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegExpInconvertibleForwardReference">
+            <summary>
+              Looks up a localized string similar to Inconvertible forward reference.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegExpInconvertibleNamedForwardReference">
+            <summary>
+              Looks up a localized string similar to Inconvertible named forward reference.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegExpInconvertibleRangeQuantifier">
+            <summary>
+              Looks up a localized string similar to Inconvertible {} quantifier.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegExpInconvertibleUnicodePropertyEscape">
+            <summary>
+              Looks up a localized string similar to Inconvertible Unicode property escape.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegExpUnicodeSetsModeNotSupported">
+            <summary>
+              Looks up a localized string similar to Unicode sets mode (flag v) is not supported currently.
+            </summary>
+        </member>
+        <member name="P:Acornima.RegExpConversionErrorMessages.RegExpUnmappableGroupName">
+            <summary>
+              Looks up a localized string similar to Cannot map group name &apos;{0}&apos; to a unique group name in the adapted regex.
+            </summary>
+        </member>
+        <member name="T:Acornima.SyntaxErrorMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ArgumentsDisallowedInInitializerAndStaticBlock">
+            <summary>
+              Looks up a localized string similar to &apos;arguments&apos; is not allowed in class field initializer or static initialization block.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.AsyncFunctionInSingleStatementContext">
+            <summary>
+              Looks up a localized string similar to Async functions can only be declared at the top level or inside a block.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.AwaitBindingIdentifier">
+            <summary>
+              Looks up a localized string similar to &apos;await&apos; is not a valid identifier name in an async function.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.AwaitExpressionFormalParameter">
+            <summary>
+              Looks up a localized string similar to Illegal await-expression in formal parameters of async function.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.AwaitNotInAsyncContext">
+            <summary>
+              Looks up a localized string similar to await is only valid in async functions and the top level bodies of modules.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.BadGetterArity">
+            <summary>
+              Looks up a localized string similar to Getter must not have any formal parameters.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.BadSetterArity">
+            <summary>
+              Looks up a localized string similar to Setter must have exactly one formal parameter.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.BadSetterRestParameter">
+            <summary>
+              Looks up a localized string similar to Setter function argument must not be a rest parameter.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ConstructorClassField">
+            <summary>
+              Looks up a localized string similar to Classes may not have a field named &apos;constructor&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ConstructorIsAccessor">
+            <summary>
+              Looks up a localized string similar to Class constructor may not be an accessor.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ConstructorIsAsync">
+            <summary>
+              Looks up a localized string similar to Class constructor may not be an async method.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ConstructorIsGenerator">
+            <summary>
+              Looks up a localized string similar to Class constructor may not be a generator.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ConstructorIsPrivate">
+            <summary>
+              Looks up a localized string similar to Class constructor may not be a private method.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ContinuousNumericSeparator">
+            <summary>
+              Looks up a localized string similar to Only one underscore is allowed as numeric separator.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DeclarationMissingInitializer_Const">
+            <summary>
+              Looks up a localized string similar to Missing initializer in const declaration.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DeclarationMissingInitializer_Destructuring">
+            <summary>
+              Looks up a localized string similar to Missing initializer in destructuring declaration.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DecoratorAppliedToStaticBlock">
+            <summary>
+              Looks up a localized string similar to Decorators cannot be applied to static initialization blocks.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DeletePrivateField">
+            <summary>
+              Looks up a localized string similar to Private fields can not be deleted.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DuplicateConstructor">
+            <summary>
+              Looks up a localized string similar to A class may only have one constructor.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DuplicateExport">
+            <summary>
+              Looks up a localized string similar to Duplicate export of &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DuplicateImportAttribute">
+            <summary>
+              Looks up a localized string similar to Import attributes has duplicate key &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.DuplicateProto">
+            <summary>
+              Looks up a localized string similar to Duplicate __proto__ fields are not allowed in object literals.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ElementAfterRest">
+            <summary>
+              Looks up a localized string similar to Rest element must be last element.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ForInOfLoopInitializer">
+            <summary>
+              Looks up a localized string similar to {0} loop variable declaration may not have an initializer.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ForInOfLoopMultiBindings">
+            <summary>
+              Looks up a localized string similar to Invalid left-hand side in {0} loop: Must have a single binding.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ForOfAsync">
+            <summary>
+              Looks up a localized string similar to The left-hand side of a for-of loop may not be &apos;async&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ForOfLet">
+            <summary>
+              Looks up a localized string similar to The left-hand side of a for-of loop may not start with &apos;let&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.GeneratorInSingleStatementContext">
+            <summary>
+              Looks up a localized string similar to Generators can only be declared at the top level or inside a block.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.IllegalBreak">
+            <summary>
+              Looks up a localized string similar to Illegal break statement.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.IllegalContinue">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; does not denote an iteration statement.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.IllegalLanguageModeDirective">
+            <summary>
+              Looks up a localized string similar to Illegal &apos;{0}&apos; directive in function with non-simple parameter list.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.IllegalReturn">
+            <summary>
+              Looks up a localized string similar to Illegal return statement.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ImportMetaOutsideModule">
+            <summary>
+              Looks up a localized string similar to Cannot use &apos;import.meta&apos; outside a module.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ImportOutsideModule">
+            <summary>
+              Looks up a localized string similar to Cannot use import statement outside a module.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidCoverInitializedName">
+            <summary>
+              Looks up a localized string similar to Invalid shorthand property initializer.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidDecoratorMemberExpr">
+            <summary>
+              Looks up a localized string similar to Invalid decorator member expression.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidDestructuringTarget">
+            <summary>
+              Looks up a localized string similar to Invalid destructuring assignment target.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidEscapedMetaProperty">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; must not contain escaped characters.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidEscapedReservedWord">
+            <summary>
+              Looks up a localized string similar to Keyword must not contain escaped characters.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidHexEscapeSequence">
+            <summary>
+              Looks up a localized string similar to Invalid hexadecimal escape sequence.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidLhsInAssignment">
+            <summary>
+              Looks up a localized string similar to Invalid left-hand side in assignment.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidLhsInFor">
+            <summary>
+              Looks up a localized string similar to Invalid left-hand side in for-loop.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidLhsInPostfixOp">
+            <summary>
+              Looks up a localized string similar to Invalid left-hand side expression in postfix operation.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidLhsInPrefixOp">
+            <summary>
+              Looks up a localized string similar to Invalid left-hand side expression in prefix operation.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidModuleExportName">
+            <summary>
+              Looks up a localized string similar to Invalid module export name: contains unpaired surrogate.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidOrUnexpectedToken">
+            <summary>
+              Looks up a localized string similar to Invalid or unexpected token.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidPrivateFieldResolution">
+            <summary>
+              Looks up a localized string similar to Private field &apos;{0}&apos; must be declared in an enclosing class.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidPropertyBindingPattern">
+            <summary>
+              Looks up a localized string similar to Illegal property in declaration context.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidRegExpFlags">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression flags.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidRestAssignmentPattern">
+            <summary>
+              Looks up a localized string similar to `...` must be followed by an assignable reference in assignment contexts.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.InvalidUnicodeEscapeSequence">
+            <summary>
+              Looks up a localized string similar to Invalid Unicode escape sequence.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.LabelRedeclaration">
+            <summary>
+              Looks up a localized string similar to Label &apos;{0}&apos; has already been declared.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.LetInLexicalBinding">
+            <summary>
+              Looks up a localized string similar to let is disallowed as a lexically bound name.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ModuleExportNameWithoutFromClause">
+            <summary>
+              Looks up a localized string similar to String literal module export names must be followed by a &apos;from&apos; clause.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ModuleExportUndefined">
+            <summary>
+              Looks up a localized string similar to Export &apos;{0}&apos; is not defined in module.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.MultipleDefaultsInSwitch">
+            <summary>
+              Looks up a localized string similar to More than one default clause in switch statement.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.NewlineAfterThrow">
+            <summary>
+              Looks up a localized string similar to Illegal newline after throw.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.NoCatchOrFinally">
+            <summary>
+              Looks up a localized string similar to Missing catch or finally after try.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.NoIterationStatement">
+            <summary>
+              Looks up a localized string similar to Illegal continue statement: no surrounding iteration statement.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.OptionalChainingNoNew">
+            <summary>
+              Looks up a localized string similar to Invalid optional chain from new expression.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.OptionalChainingNoTemplate">
+            <summary>
+              Looks up a localized string similar to Invalid tagged template on optional chain.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ParamAfterRest">
+            <summary>
+              Looks up a localized string similar to Rest parameter must be last formal parameter.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ParamDupe">
+            <summary>
+              Looks up a localized string similar to Duplicate parameter name not allowed in this context.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.PropertyRedefinition">
+            <summary>
+              Looks up a localized string similar to Redefinition of property &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpDuplicateCaptureGroupName">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Duplicate capture group name.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpIncompleteQuantifier">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Incomplete quantifier.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidCaptureGroupName">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid capture group name.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidCharacterClass">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid character class.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidClassEscape">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid class escape.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidClassPropertyName">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid property name in character class.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidDecimalEscape">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid decimal escape.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidEscape">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid escape.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidGroup">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid group.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidNamedCaptureReference">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid named capture referenced.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidNamedReference">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid named reference.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidPropertyName">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid property name.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidQuantifier">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid quantifier.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpInvalidUnicodeEscape">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Invalid Unicode escape.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpLoneQuantifierBrackets">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Lone quantifier brackets.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpNothingToRepeat">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Nothing to repeat.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpRangeOutOfOrder">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: numbers out of order in {{}} quantifier.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpRangeOutOfOrderCharacterClass">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Range out of order in character class.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpUnmatchedParen">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Unmatched &apos;)&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpUnterminatedCharacterClass">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Unterminated character class.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RegExpUnterminatedGroup">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: /{0}/{1}: Unterminated group.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.RestDefaultInitializer">
+            <summary>
+              Looks up a localized string similar to Rest parameter may not have a default initializer.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.SloppyFunction">
+            <summary>
+              Looks up a localized string similar to In non-strict mode code, functions can only be declared at top level, inside a block, or as the body of an if statement.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StaticPrototype">
+            <summary>
+              Looks up a localized string similar to Classes may not have a static property named &apos;prototype&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.Strict8Or9Escape">
+            <summary>
+              Looks up a localized string similar to \8 and \9 are not allowed in strict mode.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StrictDecimalWithLeadingZero">
+            <summary>
+              Looks up a localized string similar to Decimals with leading zeros are not allowed in strict mode.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StrictDelete">
+            <summary>
+              Looks up a localized string similar to Delete of an unqualified identifier in strict mode.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StrictEvalArguments">
+            <summary>
+              Looks up a localized string similar to Unexpected eval or arguments in strict mode.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StrictFunction">
+            <summary>
+              Looks up a localized string similar to In strict mode code, functions can only be declared at top level or inside a block.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StrictOctalEscape">
+            <summary>
+              Looks up a localized string similar to Octal escape sequences are not allowed in strict mode.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StrictOctalLiteral">
+            <summary>
+              Looks up a localized string similar to Octal literals are not allowed in strict mode.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.StrictWith">
+            <summary>
+              Looks up a localized string similar to Strict mode code may not include a with statement.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.Template8Or9Escape">
+            <summary>
+              Looks up a localized string similar to \8 and \9 are not allowed in template strings.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.TemplateOctalLiteral">
+            <summary>
+              Looks up a localized string similar to Octal escape sequences are not allowed in template strings.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.TrailingNumericSeparator">
+            <summary>
+              Looks up a localized string similar to Numeric separators are not allowed at the end of numeric literals.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UndefinedUnicodeCodePoint">
+            <summary>
+              Looks up a localized string similar to Undefined Unicode code-point.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedEOS">
+            <summary>
+              Looks up a localized string similar to Unexpected end of input.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedNewTarget">
+            <summary>
+              Looks up a localized string similar to new.target expression is not allowed here.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedReserved">
+            <summary>
+              Looks up a localized string similar to Unexpected reserved word.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedStrictReserved">
+            <summary>
+              Looks up a localized string similar to Unexpected strict mode reserved word.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedSuper">
+            <summary>
+              Looks up a localized string similar to &apos;super&apos; keyword unexpected here.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedTemplateString">
+            <summary>
+              Looks up a localized string similar to Unexpected template string.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedToken">
+            <summary>
+              Looks up a localized string similar to Unexpected token &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedTokenIdentifier">
+            <summary>
+              Looks up a localized string similar to Unexpected identifier &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedTokenNumber">
+            <summary>
+              Looks up a localized string similar to Unexpected number.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedTokenRegExp">
+            <summary>
+              Looks up a localized string similar to Unexpected regular expression.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedTokenString">
+            <summary>
+              Looks up a localized string similar to Unexpected string.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnexpectedTokenUnaryExponentiation">
+            <summary>
+              Looks up a localized string similar to Unary operator used immediately before exponentiation expression. Parenthesis must be used to disambiguate operator precedence.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnknownLabel">
+            <summary>
+              Looks up a localized string similar to Undefined label &apos;{0}&apos;.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnterminatedRegExp">
+            <summary>
+              Looks up a localized string similar to Invalid regular expression: missing /.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.UnterminatedTemplateExpr">
+            <summary>
+              Looks up a localized string similar to Missing } in template expression.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.VarRedeclaration">
+            <summary>
+              Looks up a localized string similar to Identifier &apos;{0}&apos; has already been declared.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.YieldInParameter">
+            <summary>
+              Looks up a localized string similar to Yield expression not allowed in formal parameter.
+            </summary>
+        </member>
+        <member name="P:Acornima.SyntaxErrorMessages.ZeroDigitNumericSeparator">
+            <summary>
+              Looks up a localized string similar to Numeric separator can not be used after leading 0.
+            </summary>
+        </member>
+        <member name="F:Acornima.Range.Start">
+            <summary>
+            Start index (zero-based, inclusive).
+            </summary>
+        </member>
+        <member name="F:Acornima.Range.End">
+            <summary>
+            End index (zero-based, exclusive).
+            </summary>
+        </member>
+        <member name="T:Acornima.RegExpParseMode">
+            <summary>
+            Specifies how the tokenizer should parse regular expressions.
+            </summary>
+        </member>
+        <member name="F:Acornima.RegExpParseMode.Skip">
+            <summary>
+            Scan regular expressions without checking that they are syntactically correct.
+            </summary>
+        </member>
+        <member name="F:Acornima.RegExpParseMode.Validate">
+            <summary>
+            Scan regular expressions and check that they are syntactically correct but don't attempt to convert them to an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/>.
+            </summary>
+            <remarks>
+            In case an invalid regular expression is encountered, <see cref="T:Acornima.SyntaxErrorException"/> is thrown.
+            </remarks>
+        </member>
+        <member name="F:Acornima.RegExpParseMode.AdaptToInterpreted">
+            <summary>
+            Scan regular expressions, check that they are syntactically correct and attempt to convert them to an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/>
+            without the <see cref="F:System.Text.RegularExpressions.RegexOptions.Compiled"/> option.
+            </summary>
+            <remarks>
+            In case an invalid regular expression is encountered, <see cref="T:Acornima.SyntaxErrorException"/> is thrown.<br/>
+            In the case of a valid regular expression for which an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/> cannot be constructed, either <see cref="T:Acornima.RegExpConversionErrorException"/> is thrown
+            or a <see cref="T:Acornima.Token"/> is created with the <see cref="P:Acornima.Token.Value"/> property set to <see langword="null"/>, depending on the <see cref="P:Acornima.TokenizerOptions.Tolerant"/> option.
+            </remarks>
+        </member>
+        <member name="F:Acornima.RegExpParseMode.AdaptToCompiled">
+            <summary>
+            Scan regular expressions, check that they are syntactically correct and attempt to convert them to an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/>
+            with the <see cref="F:System.Text.RegularExpressions.RegexOptions.Compiled"/> option.
+            </summary>
+            <remarks>
+            In case an invalid regular expression is encountered, <see cref="T:Acornima.SyntaxErrorException"/> is thrown.<br/>
+            In the case of a valid regular expression for which an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/> cannot be constructed, either <see cref="T:Acornima.RegExpConversionErrorException"/> is thrown
+            or a <see cref="T:Acornima.Token"/> is created with the <see cref="P:Acornima.Token.Value"/> property set to <see langword="null"/>, depending on the <see cref="P:Acornima.TokenizerOptions.Tolerant"/> option.
+            <para>
+            Please note that adapted patterns containing negative lookaround assertions won't be compiled on .NET 7+ because of a <seealso href="https://github.com/dotnet/runtime/issues/97455">regression of .NET's regex compiler</seealso>.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Acornima.Scope">
+            <summary>
+            Stores variable scope information.
+            </summary>
+            <remarks>
+            Scopes are created for exactly the following types of AST nodes:
+            <list type="bullet">
+            <item><see cref="T:Acornima.Ast.Program"/></item>
+            <item><see cref="T:Acornima.Ast.IFunction"/> (be aware that no separate scopes are created for the parameter list and the body of the function, see also <seealso cref="P:Acornima.Scope.VarParamCount"/>)</item>
+            <item><see cref="T:Acornima.Ast.IClass"/></item>
+            <item><see cref="T:Acornima.Ast.StaticBlock"/></item>
+            <item><see cref="T:Acornima.Ast.NestedBlockStatement"/></item>
+            <item><see cref="T:Acornima.Ast.CatchClause"/> (be aware that no separate scopes are created for the parameter list and the body of the catch clause, see also <seealso cref="P:Acornima.Scope.LexicalParamCount"/>)</item>
+            <item><see cref="T:Acornima.Ast.ForStatement"/>, <see cref="T:Acornima.Ast.ForInStatement"/>, <see cref="T:Acornima.Ast.ForOfStatement"/> (a separate scope is created for the initialization part of the statement)</item>
+            <item><see cref="T:Acornima.Ast.SwitchStatement"/> (a scope is created for the body of the statement; be aware that the discriminant expression is not part of this scope)</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:Acornima.Scope.Id">
+            <remarks>
+            It is guaranteed that <see cref="P:Acornima.Scope.Id"/> values are assigned sequentially, starting with zero (assigned to the root scope).
+            </remarks>
+        </member>
+        <member name="P:Acornima.Scope.VarVariables">
+            <summary>
+            A list of var-declared variables in the current lexical scope. In the case of function scopes, also includes parameters (listed at the beginning of the span).
+            </summary>
+            <remarks>
+            Variables declared in a nested statement block are hoisted, meaning that the variable identifier will be included in the <see cref="P:Acornima.Scope.VarVariables"/> span of
+            the parent scopes, up to the root var scope (i.e. the scope introduced by the closest <see cref="T:Acornima.Ast.Program"/>, <see cref="T:Acornima.Ast.IFunction"/> or <see cref="T:Acornima.Ast.StaticBlock"/> node).
+            </remarks>
+        </member>
+        <member name="P:Acornima.Scope.VarParamCount">
+            <summary>
+            The number of parameter names at the beginning of the <see cref="P:Acornima.Scope.VarVariables"/> span.
+            </summary>
+        </member>
+        <member name="P:Acornima.Scope.LexicalVariables">
+            <summary>
+            A list of lexically-declared variables in the current lexical scope. In the case of catch clause scopes, also includes parameters (listed at the beginning of the span).
+            </summary>
+        </member>
+        <member name="P:Acornima.Scope.LexicalParamCount">
+            <summary>
+            The number of parameter names at the beginning of the <see cref="P:Acornima.Scope.LexicalVariables"/> span.
+            </summary>
+        </member>
+        <member name="P:Acornima.Scope.Functions">
+            <summary>
+            A list of lexically-declared <see cref="T:Acornima.Ast.FunctionDeclaration"/>s in the current lexical scope.
+            </summary>
+            <remarks>
+            Functions declared in a nested statement block are not hoisted, meaning that the function identifiers will not be included in the <see cref="P:Acornima.Scope.Functions"/> span of
+            the parent scopes. (This is relevant only in non-strict contexts as strict mode prevents functions from being hoisted out of the scope in they are declared.)
+            </remarks>
+        </member>
+        <member name="M:Acornima.Scope.VariableList.AsReadOnlySpan">
+            <remarks>
+            WARNING: Items should not be added or removed from the <see cref="T:Acornima.Scope.VariableList"/> while the returned <see cref="T:System.ReadOnlySpan`1"/> is in use.
+            </remarks>
+        </member>
+        <member name="P:Acornima.Token.Value">
+            <remarks>
+            Return value type depends on <see cref="P:Acornima.Token.Kind"/> as follows:<br/>
+            * <see cref="F:Acornima.TokenKind.Punctuator"/> | <see cref="F:Acornima.TokenKind.Keyword"/> | <see cref="F:Acornima.TokenKind.Identifier"/> | <see cref="F:Acornima.TokenKind.StringLiteral"/> | <see cref="F:Acornima.TokenKind.EOF"/> => <see cref="T:System.String"/><br/>
+            * <see cref="F:Acornima.TokenKind.NullLiteral"/> => <see langword="null"/><br/>
+            * <see cref="F:Acornima.TokenKind.BooleanLiteral"/> => <see cref="T:System.Boolean"/><br/>
+            * <see cref="F:Acornima.TokenKind.NumericLiteral"/> => <see cref="T:System.Double"/><br/>
+            * <see cref="F:Acornima.TokenKind.BigIntLiteral"/> => <see cref="T:System.Numerics.BigInteger"/><br/>
+            * <see cref="F:Acornima.TokenKind.RegExpLiteral"/> => <see cref="T:Acornima.RegExpValue"/><br/>
+            * <see cref="F:Acornima.TokenKind.Template"/> => <see cref="T:Acornima.TemplateValue"/><br/>
+            Please be aware that this operation may involve boxing when the return value is a value type. Thus, it is preferable to use the typed value getters if you know <see cref="P:Acornima.Token.Kind"/> beforehand.
+            </remarks>
+        </member>
+        <member name="M:Acornima.Tokenizer.ValidateRegExp(System.String,System.String,Acornima.ParseError@,Acornima.EcmaVersion,Acornima.ExperimentalESFeatures)">
+            <summary>
+            Checks whether an ECMAScript regular expression is syntactically correct.
+            </summary>
+            <remarks>
+            Unicode sets mode (flag v) is not supported currently, for such patterns the method returns <see langword="false"/>.
+            </remarks>
+            <returns><see langword="true"/> if the regular expression is syntactically correct, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Acornima.Tokenizer.AdaptRegExp(System.String,System.String,System.Boolean,System.Nullable{System.TimeSpan},System.Boolean,Acornima.EcmaVersion,Acornima.ExperimentalESFeatures)">
+            <summary>
+            Parses an ECMAScript regular expression and tries to construct a <see cref="T:System.Text.RegularExpressions.Regex"/> instance with the equivalent behavior.
+            </summary>
+            <remarks>
+            Please note that, because of some fundamental differences between the ECMAScript and .NET regular expression engines,
+            not every ECMAScript regular expression can be converted to an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/> (or can be converted with compromises only).<br/>
+            You can read more about the known issues and limitations of the conversion <see href="https://github.com/adams85/acornima#regular-expressions">here</see>.
+            </remarks>
+            <returns>
+            An instance of <see cref="T:Acornima.RegExpParseResult"/>, whose <see cref="P:Acornima.RegExpParseResult.Regex"/> property contains the equivalent <see cref="T:System.Text.RegularExpressions.Regex"/> if the conversion was possible,
+            otherwise <see langword="null"/> (unless <paramref name="throwIfNotAdaptable"/> is <see langword="true"/>).
+            </returns>
+            <exception cref="T:Acornima.SyntaxErrorException">
+            <paramref name="pattern"/> is an invalid regular expression pattern (if <paramref name="throwIfNotAdaptable"/> is <see langword="true"/>).
+            </exception>
+            <exception cref="T:Acornima.RegExpConversionErrorException">
+            <paramref name="pattern"/> cannot be converted to an equivalent <see cref="T:System.Text.RegularExpressions.Regex"/> (if <paramref name="throwIfNotAdaptable"/> is <see langword="true"/>).
+            </exception>
+        </member>
+        <member name="M:Acornima.Tokenizer.RegExpParser.CheckBracesBalance(Acornima.Helpers.ArrayList{Acornima.Tokenizer.RegExpCapturingGroup}@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            Ensures the braces are balanced in the regular expression pattern.
+            </summary>
+        </member>
+        <member name="M:Acornima.Tokenizer.RegExpParser.ParsePattern``1(``0,Acornima.Tokenizer.RegExpParser.ParsePatternContext@,Acornima.RegExpConversionError@)">
+            <summary>
+            Check the regular expression pattern for additional syntax errors and optionally build an adjusted pattern which
+            implements the equivalent behavior in .NET, on top of the <see cref="F:System.Text.RegularExpressions.RegexOptions.ECMAScript"/> compatibility mode.
+            </summary>
+            <returns>
+            <see langword="null"/> if the tokenizer is configured to validate the regular expression pattern but not adapt it to .NET.
+            Otherwise, the adapted pattern or <see langword="null"/> if the pattern is syntactically correct but a .NET equivalent could not be constructed
+            and the tokenizer is configured to tolerant mode.
+            </returns>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.EcmaVersion">
+            <summary>
+            Gets or sets the ECMAScript version to parse.
+            Must be either ES3, ES5, ES6 (or ES2015), ES7 (ES2016), ES8 (ES2017), ES9 (ES2018), ES10
+            (ES2019), ES11 (ES2020), ES12 (ES2021), ES13 (ES2022), ES14 (ES2023), or Latest
+            (the latest version the library supports). Defaults to <see cref="F:Acornima.EcmaVersion.Latest"/>.
+            </summary>
+            <remarks>
+            This influences support for strict mode, the set of reserved words, and support
+            for new syntax features.
+            </remarks>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.ExperimentalESFeatures">
+            <summary>
+            Gets or sets which experimental ECMAScript language features to enable.
+            Defaults to <see cref="F:Acornima.ExperimentalESFeatures.None"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.AllowHashBang">
+            <summary>
+            Gets or sets whether to allow hashbang directive at the beginning of file and treat it as a line comment.
+            Defaults to <see langword="null"/>, in which case hashbang comment is allowed if <see cref="P:Acornima.TokenizerOptions.EcmaVersion"/> >= ES2023.
+            </summary>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.RegExpParseMode">
+            <summary>
+            Gets or sets how regular expressions should be parsed. Defaults to <see cref="F:Acornima.RegExpParseMode.Validate"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.RegexTimeout">
+            <summary>
+            Gets or sets the default timeout for created <see cref="T:System.Text.RegularExpressions.Regex"/> instances. Defaults to 5 seconds.
+            </summary>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.Tolerant">
+            <summary>
+            Gets or sets whether to ignore minor errors that do not affect the semantics of the parsed program.
+            Defaults to <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.ErrorHandler">
+            <summary>
+            Gets or sets the <see cref="T:Acornima.ParseErrorHandler"/> to use. Defaults to <see cref="F:Acornima.ParseErrorHandler.Default"/>.
+            </summary>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.OnToken">
+            <summary>
+            Gets or sets an optional callback function which will be called whenever a token is read.
+            </summary>
+            <remarks>
+            It will be passed the parameters of the token as a <see cref="T:Acornima.Token"/> object,
+            in the same format as returned by <see cref="M:Acornima.Tokenizer.GetToken(Acornima.TokenizerContext@)"/>.<br/>
+            Note that you should not call the tokenizer from the callback as that would corrupt its internal state.
+            </remarks>
+        </member>
+        <member name="P:Acornima.TokenizerOptions.OnComment">
+            <summary>
+            Gets or sets an optional callback function which will be called whenever a comment is skipped.
+            </summary>
+            <remarks>
+            It will be passed the parameters of the comment as a <see cref="T:Acornima.Comment"/> object.
+            </remarks>
+        </member>
+        <member name="M:System.StringExtensions.GetSequenceHashCode(System.ReadOnlySpan{System.Char})">
+            <summary>
+            Gets the (positive) hashcode for a given <see cref="T:System.ReadOnlySpan`1"/> instance.
+            </summary>
+            <param name="span">The input <see cref="T:System.ReadOnlySpan`1"/> instance.</param>
+            <returns>The hashcode for <paramref name="span"/>.</returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute">
+            <summary>
+            An attribute that allows parameters to receive the expression of other parameters.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute"/> class.
+            </summary>
+            <param name="parameterName">The condition parameter value.</param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.CallerArgumentExpressionAttribute.ParameterName">
+            <summary>
+            Gets the parameter name the expression is retrieved from.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+            Reserved to be used by the compiler for tracking metadata.
+            This class should not be used by developers in source code.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.SkipLocalsInitAttribute">
+            <summary>
+            Used to indicate to the compiler that the <c>.locals init</c> flag should not be set in method headers.
+            </summary>
+        </member>
+    </members>
+</doc>

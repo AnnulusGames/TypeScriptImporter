@@ -1,0 +1,12 @@
+{
+    "include": [ "./**/*.ts", "./**/*.d.ts" ],
+
+    "compilerOptions": {
+        "incremental": true,
+    },
+
+    "tstl": {
+        "noHeader": true,
+        "luaLibImport": "inline"
+    }
+}
